@@ -34,9 +34,21 @@ class UserGroup
      */
     private $userGroupHasUsers;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\News", mappedBy="user_group")
+     */
+    private $news;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Member", mappedBy="userGroup")
+     */
+    private $members;
+
     public function __construct()
     {
         $this->userGroupHasUsers = new ArrayCollection();
+        $this->news = new ArrayCollection();
+        $this->members = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -93,6 +105,68 @@ class UserGroup
             // set the owning side to null (unless already changed)
             if ($userGroupHasUser->getUserGroup() === $this) {
                 $userGroupHasUser->setUserGroup(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|News[]
+     */
+    public function getNews(): Collection
+    {
+        return $this->news;
+    }
+
+    public function addNews(News $news): self
+    {
+        if (!$this->news->contains($news)) {
+            $this->news[] = $news;
+            $news->setUserGroup($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNews(News $news): self
+    {
+        if ($this->news->contains($news)) {
+            $this->news->removeElement($news);
+            // set the owning side to null (unless already changed)
+            if ($news->getUserGroup() === $this) {
+                $news->setUserGroup(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Member[]
+     */
+    public function getMembers(): Collection
+    {
+        return $this->members;
+    }
+
+    public function addMember(Member $member): self
+    {
+        if (!$this->members->contains($member)) {
+            $this->members[] = $member;
+            $member->setUserGroup($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMember(Member $member): self
+    {
+        if ($this->members->contains($member)) {
+            $this->members->removeElement($member);
+            // set the owning side to null (unless already changed)
+            if ($member->getUserGroup() === $this) {
+                $member->setUserGroup(null);
             }
         }
 

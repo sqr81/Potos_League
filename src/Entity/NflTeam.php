@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,6 +32,16 @@ class NflTeam
      * @ORM\Column(type="string", length=255)
      */
     private $logoBanner;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Member", mappedBy="nflTeam")
+     */
+    private $members;
+
+    public function __construct()
+    {
+        $this->members = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -68,6 +80,37 @@ class NflTeam
     public function setLogoBanner(string $logoBanner): self
     {
         $this->logoBanner = $logoBanner;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Member[]
+     */
+    public function getMembers(): Collection
+    {
+        return $this->members;
+    }
+
+    public function addMember(Member $member): self
+    {
+        if (!$this->members->contains($member)) {
+            $this->members[] = $member;
+            $member->setNflTeam($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMember(Member $member): self
+    {
+        if ($this->members->contains($member)) {
+            $this->members->removeElement($member);
+            // set the owning side to null (unless already changed)
+            if ($member->getNflTeam() === $this) {
+                $member->setNflTeam(null);
+            }
+        }
 
         return $this;
     }

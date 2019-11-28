@@ -50,10 +50,16 @@ class User implements UserInterface
      */
     private $userGroupHasUsers;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\News", mappedBy="user")
+     */
+    private $news;
+
     public function __construct()
     {
         $this->userGroups = new ArrayCollection();
         $this->userGroupHasUsers = new ArrayCollection();
+        $this->news = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -202,6 +208,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($userGroupHasUser->getUser() === $this) {
                 $userGroupHasUser->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|News[]
+     */
+    public function getNews(): Collection
+    {
+        return $this->news;
+    }
+
+    public function addNews(News $news): self
+    {
+        if (!$this->news->contains($news)) {
+            $this->news[] = $news;
+            $news->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNews(News $news): self
+    {
+        if ($this->news->contains($news)) {
+            $this->news->removeElement($news);
+            // set the owning side to null (unless already changed)
+            if ($news->getUser() === $this) {
+                $news->setUser(null);
             }
         }
 
