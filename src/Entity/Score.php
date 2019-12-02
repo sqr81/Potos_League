@@ -38,6 +38,18 @@ class Score
      */
     private $season;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Member", inversedBy="scoresHome")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $home;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Member", inversedBy="scoresAway")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $away;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -87,6 +99,30 @@ class Score
     public function setSeason(?Season $season): self
     {
         $this->season = $season;
+
+        return $this;
+    }
+
+    public function getHome(): ?Member
+    {
+        return $this->home;
+    }
+
+    public function setHome(?Member $home): self
+    {
+        $this->home = $home;
+
+        return $this;
+    }
+
+    public function getAway(): ?Member
+    {
+        return $this->away;
+    }
+
+    public function setAway(?Member $away): self
+    {
+        $this->away = $away;
 
         return $this;
     }

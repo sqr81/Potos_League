@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -47,6 +49,22 @@ class Member
      * @ORM\JoinColumn(nullable=false)
      */
     private $userGroup;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Score", mappedBy="home")
+     */
+    private $scoresHome;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Score", mappedBy="away")
+     */
+    private $scoresAway;
+
+    public function __construct()
+    {
+        $this->scoresHome = new ArrayCollection();
+        $this->scoresAway = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -121,6 +139,68 @@ class Member
     public function setUserGroup(?UserGroup $userGroup): self
     {
         $this->userGroup = $userGroup;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Score[]
+     */
+    public function getScoresHome(): Collection
+    {
+        return $this->scoresHome;
+    }
+
+    public function addScoresHome(Score $scoresHome): self
+    {
+        if (!$this->scoresHome->contains($scoresHome)) {
+            $this->scoresHome[] = $scoresHome;
+            $scoresHome->setHome($this);
+        }
+
+        return $this;
+    }
+
+    public function removeScoresHome(Score $scoresHome): self
+    {
+        if ($this->scoresHome->contains($scoresHome)) {
+            $this->scoresHome->removeElement($scoresHome);
+            // set the owning side to null (unless already changed)
+            if ($scoresHome->getHome() === $this) {
+                $scoresHome->setHome(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Score[]
+     */
+    public function getScoresAway(): Collection
+    {
+        return $this->scoresAway;
+    }
+
+    public function addScoresAway(Score $scoresAway): self
+    {
+        if (!$this->scoresAway->contains($scoresAway)) {
+            $this->scoresAway[] = $scoresAway;
+            $scoresAway->setAway($this);
+        }
+
+        return $this;
+    }
+
+    public function removeScoresAway(Score $scoresAway): self
+    {
+        if ($this->scoresAway->contains($scoresAway)) {
+            $this->scoresAway->removeElement($scoresAway);
+            // set the owning side to null (unless already changed)
+            if ($scoresAway->getAway() === $this) {
+                $scoresAway->setAway(null);
+            }
+        }
 
         return $this;
     }

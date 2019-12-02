@@ -7,15 +7,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AccueilController extends AbstractController
+class MainController extends AbstractController
 {
     /**
-     * @Route("/", name="accueil")
+     * @Route("/", name="main")
      */
-    public function accueil()
+    public function index()
     {
-        return $this->render('accueil.html.twig', [
-            'controller_name' => 'AccueilController',
+        return $this->render('main.html.twig', [
+            'controller_name' => 'MainController',
         ]);
     }
 }
