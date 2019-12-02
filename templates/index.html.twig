@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <body>
+  <div class="bloc_page">
+    <header>
+      <div class="container d-flex justify-content-center">
+        <div class="row">
+          <div class="col-md-2 ">
+            <nav class="navbar navbar-red- mt-0">
+              <img src="img/admin.png" width="60px"  height="48px" class="d-inline-block align-top" alt="admin">
+            </nav>
+          </div>
+          <div class=" col md-10 mt-3">
+            <form>
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <label class="sr-only" for="inlineFormInput">Commissioner</label>
+                  <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Commissioner">
+                </div>
+                <div class="commissioner col-auto">
+                  <label class="sr-only" for="inlineFormInputGroup">Mot de passe</label>
+                  <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"></div>
+                    </div>
+                    <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Mot de passe">
+                  </div>
+                </div>
+                <div class="col-auto">
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary mb-2"><a href="dashboard.html">Validez</a></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container p-2">
+        <div class="row d-flex p-2 bd-highlight">
+          <div class="ipl col-md-4 d-inline-flex justify-content-end">
+            <img src="img/ipl.png" alt="ipl">
+          </div>
+          <div class="col-md-8 h1">
+            <h1>Bienvenue sur le site OFFICIEL de la <span>Poto's League</span></h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+<section >
+  <!--log in-->
+  <div class="container mt-5  p-5 d-flex justify-content-around">
+    <!--Log in with usual user-->
+    <div class="row">
+      <div class="col md-6 ">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Adresse mail:</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Entrez l'email">
+            <small id="emailHelp" class="form-text text-muted">L'adresse mail ne bougera pas d'ici.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Mot de passe:</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Se souvenir de moi.</label>
+          </div>
+          <button type="submit" class="btn btn-primary"><a href="http://www.potosleague.fr/potosleague.html">Validez</button></a>
+        </form>
+      </div>
+    </div>
+    <!--Redirection for registration-->
+    <div class="row d-flex align-items-end">
+      <div class="col md-6">
+        <form class="form-inline">
+          <div class="form-group mb-2">
+            <h3>Pas encore inscrit ?</h3>
+            <button class="btn btn-success ml-1" type="button">C'est parti !</button>
+          </div>
+        </form>
+      </div>
+      <!--Log in by socials medias-->
+      <div class="container">
+        <div class="row">
+          <div class="col md-4 d-flex flex-column">
+            <h3 class="reseaux_sociaux">Se connecter avec...</h3>
+            <a  href="https://www.facebook.com/" class="btnfb btn btn-primary btn-lg btn-block"><img src="img/facebook.png" alt="facebook">Facebook</a>
+            <button type="button" class="btngoogle  btn btn-light btn-lg btn-block"><img src="img/google.png" alt="google"><a href="https://www.google.com/">Google</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+  <footer>
+
+    <div class="font-italic">Design by: <a href="#">Moi...</a></div>
+  </footer>
+</div>
+</body>
+
+    
+
+   
+{% endblock %}
