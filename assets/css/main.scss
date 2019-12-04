@@ -1,0 +1,77 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap";
+@import "components/card";
+@font-face{
+  font-family: "astonishedregular";
+    src: url('../../src/police/misprintedtype-fonts-astonished-32/astonished/astonished-webfont.woff2') format('woff2'),
+         url('../../src/police/misprintedtype-fonts-astonished-32/astonished/astonished-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import "components/dashboard";
+
+
+.bloc_page{
+  margin:auto;
+  width: 1000px;
+  font-family:"Garamond, serif";
+  font-size: 1.1em;
+}
+
+.btnfb {
+  background-color: #3B5998;
+}
+.btngoogle {
+  background-color: white; 
+}
+
+.container{
+  background-color: lightblue;
+}
+
+h1{
+  font-family: georgia;
+  text-shadow: 10px 10px 10px grey;
+}
+
+h3{
+  font-size: 1em;
+}
+
+.ipl{
+  height: 115px;
+}
+
+section{
+  vertical-align: middle;
+}
+
+span{
+  font-family: "astonishedregular";
+  font-size: 1.4em;
+}
+
+/*-----------ajout.scss--------*/
+.pageajout{
+
+  .cellule{
+    width: 150px;
+  }
+
+  h1{
+    font-size:2em;
+  }
+  h1 img{
+    border: 2px solid black;
+    border-radius: 6px 6px 6px;
+  }
+ 
+  .home{
+    margin-top: 220px;
+  }
+
+  .topcard img{
+      border: 2px solid black;
+      border-radius: 6px 6px 6px;
+  }
+}

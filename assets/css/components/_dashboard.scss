@@ -1,0 +1,36 @@
+
+
+  body{
+    background: url("../../src/img/bgdash.jpg") no-repeat;
+    background-attachment: fixed;
+  }
+.top{
+  width: 1000px;
+}
+.bloc_page{
+    margin:auto;
+    width: 1000px;
+    font-family:"Garamond, serif";
+    font-size: 1.1em;
+  }
+
+.titre img{
+    border: 2px solid black;
+    border-radius: 6px 6px 6px;
+}
+
+.nav a{
+      font-size: 1em;
+      color: #181818;
+}
+
+.list-group{
+    width:25%;
+  }
+  
+.home{
+  margin-top: 220px;
+}
+h2 span{
+  font-family:"astonishedregular";
+}
