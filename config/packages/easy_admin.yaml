@@ -1,0 +1,11 @@
+easy_admin:
+    entities:
+        - App\Entity\Article
+        - App\Entity\Category
+        - App\Entity\User
+        - App\Entity\Member
+        - App\Entity\News
+        - App\Entity\NflTeam
+        - App\Entity\Score
+        - App\Entity\Season
+        - App\Entity\UserGroup
