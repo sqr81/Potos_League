@@ -1,0 +1,108 @@
+#titre
+{
+border: 2px groove #181818;
+border-radius: 12px 12px 12px 12px;
+box-shadow: 6px 6px 6px;
+padding:10px;
+display: flex;
+justify-content: space-between;
+background:url("/potos_league/assets/images/bengals2.jpg");
+height:80px;
+
+}
+
+
+#logo
+{
+border: 3px solid #181818;
+border-radius: 6px 6px 6px 6px;
+box-shadow: 2px 2px 2px;
+height:70px;
+-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation: fadein 3s; /* Firefox < 16 */
+ -ms-animation: fadein 3s; /* Internet Explorer */
+  -o-animation: fadein 3s; /* Opera < 12.1 */
+   animation: fadein 3s;
+
+}
+
+
+h1
+{
+font-family:"baskervvilleregular";
+font-size:2em;
+color:#A9B6BA;
+text-shadow: 0px 4px 4px #181818;
+margin-right: 60px;
+margin:auto;
+}
+
+h1 span
+{
+font-family:"astonishedregular";
+font-size: 2em;
+-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation: fadein 1s; /* Firefox < 16 */
+ -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+   animation: fadein 1s;
+}
+
+.container_navigation
+{
+font-size:1.2em;
+font-family: impact;
+display:flex;
+justify-content: center;
+list-style-type: none;
+position:relative;
+}
+.navigation, .navigation ul
+{
+list-style-type:none;
+margin: 50px;
+padding: 0px;
+}
+.navigation ul
+{
+display: none;
+}
+.navigation li
+{
+display:inline-block;
+position:relative;
+}
+
+.navigation a
+{
+display: block;
+   width: 150px;
+   height: 30px;
+   line-height: 30px;
+   padding: 3px 10px;
+   text-align: center;
+
+}
+
+.navigation li:hover ul
+{
+display: block;
+   position: absolute;
+   top: 36px; 
+   left: 0px; 
+   z-index: 100; 
+
+}
+
+.navigation ul a
+{
+display:block;
+}
+
+
+.navigation ul li a {
+  color: #666;  /* Couleur du texte des sous-menu */ 
+}
+.navigation ul li:hover a {
+  color: #f00;  /* Couleur du texte des sous-menu au survol */
+}

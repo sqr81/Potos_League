@@ -1,77 +1,990 @@
-@import "../../node_modules/bootstrap/dist/css/bootstrap";
-@import "components/card";
-@font-face{
+
+
+@font-face {
+  font-family: "baskervvilleregular";
+  src: url('police/baskerville/baskervville-regular-webfont.woff2') format('woff2'),
+       url('police/baskerville/baskervville-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: "happy_times_at_the_ikobRg";
+  src: url('police/happy-times-at-the-ikob/happy-times-at-the-ikob-webfont.woff2') format('woff2'),
+       url('police/happy-times-at-the-ikob/happy-times-at-the-ikob-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+  font-family: "grand_hotelregular";
+  src: url('police/grand-hotel/grand-hotel-regular-webfont.woff2') format('woff2'),
+       url('police/grand-hotel/grand-hotel-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
   font-family: "astonishedregular";
-    src: url('../../src/police/misprintedtype-fonts-astonished-32/astonished/astonished-webfont.woff2') format('woff2'),
-         url('../../src/police/misprintedtype-fonts-astonished-32/astonished/astonished-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  src: url('police/misprintedtype-fonts-astonished-32/astonished/astonished-webfont.woff2') format('woff2'),
+       url('police/misprintedtype-fonts-astonished-32/astonished/astonished-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
-@import "components/dashboard";
-
-
-.bloc_page{
-  margin:auto;
-  width: 1000px;
-  font-family:"Garamond, serif";
-  font-size: 1.1em;
+@-webkit-keyframes marqueelike {
+0%, 100% {margin-left:0;}
+99.99% {margin-left:-100%;}
+}
+@-moz-keyframes marqueelike {
+0%, 100% {margin-left:0;}
+99.99% {margin-left:-100%;}
+}
+@-o-keyframes marqueelike {
+0%, 100% {margin-left:0;}
+99.99% {margin-left:-100%;}
+}
+@-ms-keyframes marqueelike {
+0%, 100% {margin-left:0;}
+99.99% {margin-left:-100%;}
+}
+@keyframes marqueelike {
+0%, 100% {margin-left:0;}
+99.99% {margin-left:-100%;}
 }
 
-.btnfb {
-  background-color: #3B5998;
-}
-.btngoogle {
-  background-color: white; 
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-.container{
-  background-color: lightblue;
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-h1{
-  font-family: georgia;
-  text-shadow: 10px 10px 10px grey;
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-h3{
-  font-size: 1em;
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-.ipl{
-  height: 115px;
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
-section{
-  vertical-align: middle;
+.aside {
+width: 300px;
+height: 600px;
+display: flex;
+flex-direction: column;
 }
 
-span{
-  font-family: "astonishedregular";
-  font-size: 1.4em;
+body
+{
+
+background:url("/potos_league/assets/images/fond5.jpg") no-repeat ;
+background-attachment: fixed;
+z-index: 1;
+display: flex;
 }
 
-/*-----------ajout.scss--------*/
-.pageajout{
+#bloc_page
+{
+width: 900px;
+margin: auto;
+font-family: Georgia, serif;
+color:#181818;
+margin-top: 70px;
+}
 
-  .cellule{
-    width: 150px;
-  }
 
-  h1{
-    font-size:2em;
-  }
-  h1 img{
-    border: 2px solid black;
-    border-radius: 6px 6px 6px;
-  }
- 
-  .home{
-    margin-top: 220px;
-  }
 
-  .topcard img{
-      border: 2px solid black;
-      border-radius: 6px 6px 6px;
-  }
+#separateur
+{
+width: 900px;
+background:url("/potos_league/assets/images/separateur.png") repeat-x;
+
+}
+
+.hottopic
+{
+display: flex;
+margin:auto;
+
+}
+
+.hottopic_image
+{
+margin-top: 50px;
+margin-bottom:100px;
+border: 3px solid #181818;
+border-radius:6px 6px 6px 6px;
+height:50px;
+}
+
+.defileParent 
+{
+display: block;
+margin:3em auto;
+margin-top: 50px;
+margin-bottom:100px;
+overflow: hidden;
+position: relative;
+table-layout: fixed;
+width: 500px;
+height:45px;
+border: 3px outset #181818;
+border-radius:6px 6px 6px 6px;
+background-color:#E6ED0E;
+padding-top:5px;
+justify-content: center;
+}
+
+.defile 
+{
+display:block;
+-webkit-animation:linear marqueelike 20s infinite ;
+-moz-animation:linear marqueelike 20s infinite ;
+-o-animation:linear marqueelike 20s infinite ;
+-ms-animation:linear marqueelike 20s infinite ;
+animation:linear marqueelike 20s infinite ;
+margin-left:-100%;
+padding:8px;
+text-align:left;
+height:25px;
+font-size: 1.5em;
+}
+
+.defile:after 
+{
+content:attr(data-text);
+position:absolute;
+white-space:nowrap;
+padding-left:10px;
+}
+
+
+article
+{
+display:flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-top:10px;
+padding-top:10px;
+}
+
+
+.titre2
+{
+display:flex;
+flex-direction: column;
+width: 45%;
+
+}
+
+
+h2
+{
+font-family: "happy_times_at_the_ikobRg";
+font-size: 1.5em;
+padding-left:5px;
+border: 2px inset #181818;
+border-radius: 6px ;
+box-shadow: 6px 6px 7px black;
+width: 400px;
+background: url("/potos_league/assets/images/bengals2.jpg");
+}
+
+
+#score_journee
+{
+width:400px;
+height:300px;
+border: 4px solid black;
+border-radius: 6px 6px 6px;
+position: relative;
+
+overflow: scroll;
+background: url("/potos_league/assets/images/bp.png") no-repeat;
+
+
+}
+
+.bp
+{
+position:absolute;
+top: 0px;
+left: 0px;
+opacity:0.3;
+z-index:2;
+/* chantier */
+
+
+}
+
+
+#score_journee p
+{
+
+font-family: georgia;
+font-size:1.3em;
+font-weight: bold;
+color:white;
+text-align:justify;
+border:2px solid #181818;
+border-radius: 6px 6px 6px;
+background-color: #092B9C;
+
+z-index: 3;
+}
+#score_journee a
+{
+color: red;
+}
+
+
+
+
+
+#classement
+{
+width:400px;
+height:300px;
+border:4px solid black;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 1px;
+position: relative;
+overflow: auto;
+background: url("/potos_league/assets/images/dauphins.jpg") no-repeat;
+
+}
+
+#classement ol
+{
+font-family: georgia;
+font-size:1.3em;
+font-weight: bold;
+color:white;
+
+padding-left: 40px;
+padding-top: 5px;
+
+position: absolute;
+z-index: 10;
+
+width:300px;
+
+
+}
+
+#classement li
+{
+text-align: center;
+
+}
+#classement p
+{
+text-decoration: underline;
+color: #E00D27;
+font-family: impact;
+}
+
+.nissadolphins
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #CC100C;
+padding-left: 5px;
+}
+.southfalcons
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #181818;
+padding-left: 5px;
+}
+.lescaribous
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #2684F0;
+padding-left: 5px;
+}
+.theplayaz
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #26F04F;
+padding-left: 5px;
+}
+.lesdahuts
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #2F4C91;
+padding-left: 5px;
+}
+.lesbroncos
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #FC6805;
+padding-left: 5px;
+}
+.opexteam
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #488C41;
+padding-left: 5px;
+}
+.elsasseagles
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #0B6302;
+padding-left: 5px;
+}
+.gitansdenancy
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #092B9C;
+padding-left: 5px;
+}
+.theblackcats
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #078DFA;
+padding-left: 5px;
+}
+.lessurfeurs
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #5E249C;
+padding-left: 5px;
+}
+.galettesaucisse
+{
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+box-shadow: 3px 3px 3px black;
+background-color: #00B1FC;
+padding-left: 5px;
+}
+
+.dauphins
+{
+position:absolute;
+top:0;
+left:0;
+opacity: 0.3;
+z-index: 2;
+/*chantier*/
+}
+
+#chaud
+{
+width:900px;
+height:300px;
+border:4px solid black;
+border-radius: 6px 6px 6px;
+position :relative;
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+background: url("/potos_league/assets/images/bengals2.jpg")no-repeat;
+
+}
+
+.tv
+{
+width:895px;
+height:486px;
+border:4px solid black;
+border-radius: 6px 6px 6px;
+-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation: fadein 2s; /* Firefox < 16 */
+ -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+   animation: fadein 2s;
+
+}
+
+
+
+
+
+#video
+{
+border:2px solid #181818;
+box-shadow: 6px 6px 6px black;
+width:250px;
+height:250px;
+position: absolute;
+left:25px;
+top: 25px;
+
+}
+
+#spoil
+{
+display:flex;
+border:2px solid black;
+border-radius: 6px 6px 6px;
+background-color: #BAB4B1;
+box-shadow: 6px 6px 6px black;
+width: 300px;
+height: 50px;
+margin:auto;
+}
+
+
+
+.spoillogo
+{
+width:50px;
+height:50px;
+}
+
+#chambre
+{
+display:flex;
+border:2px solid black;
+border-radius: 6px 6px 6px;
+background-color: #BAB4B1;
+box-shadow: 6px 6px 6px black;
+width: 300px;
+height: 50px;
+margin:auto;
+}
+
+.trashlogo
+{
+width:50px;
+height:50px;
+}
+
+#divers
+{
+display:flex;
+border:2px solid black;
+border-radius: 6px 6px 6px;
+background-color: #BAB4B1;
+box-shadow: 6px 6px 6px black;
+width: 300px;
+height: 50px;
+margin:auto;
+}
+
+.diverslogo
+{
+width:50px;
+height:50px;
+}
+
+#hottopic
+{
+border:2px solid #181818;
+box-shadow: 6px 6px 6px black;
+width:250px;
+height:250px;
+position: absolute;
+right:25px;
+top: 25px;
+
+}
+
+
+.bengals3
+{
+width: 900px;
+height:300px;
+opacity:0.3;
+position: absolute;
+top:0;
+left:0;
+}
+
+h3
+{
+font-size: 1.5em;
+font-weight: bold;
+margin:auto;
+}
+
+#chaud h3:hover
+{
+color:#C20C2A;
+text-decoration: underline;
+}
+
+
+#news
+{
+width: 900px;
+height: 300px;
+border: 4px solid #181818;
+border-radius: 6px 6px 6px;
+position: relative;
+overflow: auto;
+}
+
+#news p
+{
+
+
+font-family:georgia;
+font-size: 1.2em;
+font-weight: bold;
+text-align: justify;
+border: 2px solid #181818;
+border-radius: 6px 6px 6px;
+width: 800px;
+background-color: #D1CAC7;
+margin: auto;
+margin-top: 20px;
+margin-bottom: 20px;
+padding: 10px 10px 10px 10px;
+opacity: 0.9;
+z-index: 3;
+}
+
+#imagefooter
+{
+position:relative;
+}
+
+#images_liens
+{
+display: flex;
+justify-content: space-around;
+width: 400px;
+position:absolute;
+left:10px;
+top: 10px;
+}
+
+
+.facebook
+{
+border:3px solid #181818;
+width:40px;
+height:40px;
+border-radius: 6px;
+}	
+.nfl
+{
+border:3px solid #181818;
+width:41px;
+height:41px;
+border-radius: 6px;
+}
+.fffa
+{
+border:3px solid #181818;
+width:41px;
+height:41px;
+border-radius: 6px;
+}
+
+.bein
+{
+border:3px solid #181818;
+width:41px;
+height:41px;
+border-radius: 6px;
+}
+
+.youtube
+{
+border:3px solid #181818;
+width:41px;
+height:41px;
+border-radius: 6px;
+}
+
+.mail
+{
+border:3px solid #181818;
+width:41px;
+height:41px;
+border-radius: 6px;
+}
+
+/*----notification-----*/
+
+.container {
+display: flex;
+width:220px;
+height: 200px;
+justify-content: left;
+align-items: flex-end;
+margin-top: 120px;
+
+
+}
+
+.rectangle {
+display: flex;
+align-items: center;
+margin-top: 50px;
+justify-content: flex-start;
+position: relative;
+width: 50px;
+height: 50px;
+background: #380848;
+transform: scale(0);
+border-radius: 50%;
+color: white;
+opacity: 0;
+overflow: hidden;
+animation: scale-in .3s ease-out forwards,
+  expand .35s .25s ease-out forwards;
+  border: 2px solid black;
+box-shadow: 12px 1px 12px;
+border-radius: 6px;
+}
+
+.notification-text {
+display: flex;
+align-items: center;
+padding: 0 16px;
+font-family: 'Roboto', sans-serif;
+font-size: 14px;
+animation: fade-in .65s ease-in forwards;
+}
+
+@keyframes scale-in {
+100% {
+  transform: scale(1);
+  opacity: 1;
+}
+}
+
+@keyframes expand {
+50% {
+  width: 350px;
+  border-radius: 6px;
+}
+100% {
+  width: 300px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,.2),
+              0px 1px 1px 0px rgba(0,0,0,.14),
+              0px 3px 3px -1px rgba(0,0,0,.12);
+}
+}
+
+@keyframes fade-in {
+0% {
+  opacity: 0;
+}
+100% {
+  opacity: .8;
+}
+}
+
+/*-------------carousel---------------*/
+
+
+.carousel {
+
+width:220px;
+height: 30%;
+margin-top: 10px;
+display: flex;
+border: 2px solid black;
+box-shadow: 12px 1px 12px;
+border-radius: 6px;
+
+background: rgb(95, 51, 165);
+-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation: fadein 3s; /* Firefox < 16 */
+ -ms-animation: fadein 3s; /* Internet Explorer */
+  -o-animation: fadein 3s; /* Opera < 12.1 */
+   animation: fadein 3s;
+}
+
+.carousel h3 {
+font-size: 20px;
+text-align: center;
+
+
+}
+
+.content-slider {
+
+justify-content: left;
+align-items: center;
+padding: 10px;
+
+}
+
+.slider {
+height: 110px;
+width: 200px;
+margin: 40px auto 0;
+overflow: visible;
+position: relative;
+}
+
+.mask {
+overflow: hidden;
+height: 110px;
+}
+
+.slider ul {
+margin: 0;
+padding: 0;
+position: relative;
+}
+
+.slider li {
+width: 680px;
+height: 320px;
+position: absolute;
+top: -325px;
+list-style: none;
+}
+
+.slider .quote {
+font-size: 40px;
+font-style: italic;
+
+}
+
+.slider .source {
+font-size: 20px;
+text-align: right;
+}
+
+.slider li.anim1 {
+animation: cycle 15s linear infinite;
+}
+
+.slider li.anim2 {
+animation: cycle2 15s linear infinite;
+}
+
+.slider li.anim3 {
+animation: cycle3 15s linear infinite;
+}
+
+.slider li.anim4 {
+animation: cycle4 15s linear infinite;
+}
+
+.slider li.anim5 {
+animation: cycle5 15s linear infinite;
+}
+
+.slider:hover li {
+animation-play-state: paused;
+}
+
+@keyframes cycle {
+0% {
+  top: 0px;
+}
+4% {
+  top: 0px;
+}
+16% {
+  top: 0px;
+  opacity: 1;
+  z-index: 0;
+}
+20% {
+  top: 325px;
+  opacity: 0;
+  z-index: 0;
+}
+21% {
+  top: -325px;
+  opacity: 0;
+  z-index: -1;
+}
+50% {
+  top: -325px;
+  opacity: 0;
+  z-index: -1;
+}
+92% {
+  top: -325px;
+  opacity: 0;
+  z-index: 0;
+}
+96% {
+  top: -325px;
+  opacity: 0;
+}
+100% {
+  top: 0px;
+  opacity: 1;
+}
+}
+
+@keyframes cycle2 {
+0% {
+  top: -325px;
+  opacity: 0;
+}
+16% {
+  top: -325px;
+  opacity: 0;
+}
+20% {
+  top: 0px;
+  opacity: 1;
+}
+24% {
+  top: 0px;
+  opacity: 1;
+}
+36% {
+  top: 0px;
+  opacity: 1;
+  z-index: 0;
+}
+40% {
+  top: 325px;
+  opacity: 0;
+  z-index: 0;
+}
+41% {
+  top: -325px;
+  opacity: 0;
+  z-index: -1;
+}
+100% {
+  top: -325px;
+  opacity: 0;
+  z-index: -1;
+}
+}
+
+@keyframes cycle3 {
+0% {
+  top: -325px;
+  opacity: 0;
+}
+36% {
+  top: -325px;
+  opacity: 0;
+}
+40% {
+  top: 0px;
+  opacity: 1;
+}
+44% {
+  top: 0px;
+  opacity: 1;
+}
+56% {
+  top: 0px;
+  opacity: 1;
+  z-index: 0;
+}
+60% {
+  top: 325px;
+  opacity: 0;
+  z-index: 0;
+}
+61% {
+  top: -325px;
+  opacity: 0;
+  z-index: -1;
+}
+100% {
+  top: -325px;
+  opacity: 0;
+  z-index: -1;
+}
+}
+
+@keyframes cycle4 {
+0% {
+  top: -325px;
+  opacity: 0;
+}
+56% {
+  top: -325px;
+  opacity: 0;
+}
+60% {
+  top: 0px;
+  opacity: 1;
+}
+64% {
+  top: 0px;
+  opacity: 1;
+}
+76% {
+  top: 0px;
+  opacity: 1;
+  z-index: 0;
+}
+80% {
+  top: 325px;
+  opacity: 0;
+  z-index: 0;
+}
+81% {
+  top: -325px;
+  opacity: 0;
+  z-index: -1;
+}
+100% {
+  top: -325px;
+  opacity: 0;
+  z-index: -1;
+}
+}
+
+@keyframes cycle5 {
+0% {
+  top: -325px;
+  opacity: 0;
+}
+76% {
+  top: -325px;
+  opacity: 0;
+}
+80% {
+  top: 0px;
+  opacity: 1;
+}
+84% {
+  top: 0px;
+  opacity: 1;
+}
+96% {
+  top: 0px;
+  opacity: 1;
+  z-index: 0;
+}
+100% {
+  top: 325px;
+  opacity: 0;
+  z-index: 0;
+}
 }

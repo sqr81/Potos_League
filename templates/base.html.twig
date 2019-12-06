@@ -5,16 +5,18 @@
         <title>{% block title %}Poto's League{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">       
-        <link rel="stylesheet" href="build/css/app.css">
-        <link rel="stylesheet" href="build/css/index.css">
-        <link rel="stylesheet" href="build/css/main.css">
+        <link rel="stylesheet" href="/potos_league/public/build/css/app.css">
+        <link rel="stylesheet" href="/potos_league/public/build/css/index.css">
+        <link rel="stylesheet" href="/potos_league/public/build/css/main.css">
+        <link rel="stylesheet" href="/potos_league/public/build/css/includes/navigation.css">
+    
         
         
     </head>
     <body>
 
         
-
+        {% block index %}{% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
