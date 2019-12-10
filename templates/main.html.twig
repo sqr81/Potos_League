@@ -2,7 +2,7 @@
 {% block body %}
 		<aside>
 			<div class="aside">
-				<div class="container">
+				<div class="container_notif">
 					<div class="rectangle">
 						<div class="notification-text">
 							<i class="material-icons">info</i>
@@ -42,7 +42,21 @@
 								</div>
 							</div>
 						</div>
+						
 				</div>
+				
+					{% if app.user %}             
+                        <a class="p-2 " href="{{ path('main') }}">Mon compte</a>
+                        <a class="p-2 " href="{{ path('app_logout') }}">Déconnexion</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="p-2 admin" href="{{ path('easyadmin') }}">Admin</a>
+                        	{% else %}
+                            {% endif %}
+                            {% else %}   
+                                <a class="p-2 " href="{{ path('app_login') }}">Connexion</a>
+                                <a class="p-2 " href="{{ path('app_register') }}">Inscription</a>
+                            {% endif %}
+			
 				<!------------fin carousel------------------------>
 			</div>
 		</aside>

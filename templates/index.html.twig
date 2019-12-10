@@ -1,117 +1,146 @@
-{% block index %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Poto's League{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+            <link rel="stylesheet" href="/potos_league/public/build/css/index.css">
+            <link rel="stylesheet" href="/potos_league/public/build/css/includes/navigation.css">
+        {% endblock %}
+            <link rel="shortcut icon" type="image/x-icon" href="/potos_league/assets/images/flaviconelogo2.ico">       
+    </head>
     <body>
-  <div class="bloc_page">
-    <header>
-      <div class="container d-flex justify-content-center">
-        <div class="row">
-          <div class="col-md-2 ">
-            <nav class="navbar navbar-red- mt-0">
-              <img src="build/img/admin.png" class="d-inline-block align-top" alt="admin">
-              <img src="build/i" width="60px"  height="48px" class="d-inline-block align-top" alt="admin">
-            </nav>
-          </div>
-          <div class=" col md-10 mt-3">
-            <form>
-              <div class="form-row align-items-center">
-                <div class="col-auto">
-                  <label class="sr-only" for="inlineFormInput">Commissioner</label>
-                  <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Commissioner">
-                </div>
-                <div class="commissioner col-auto">
-                  <label class="sr-only" for="inlineFormInputGroup">Mot de passe</label>
-                  <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"></div>
+        {% block navigation %}{% endblock %}
+        {% block index %}{% endblock %}
+        {% block body %}
+          <body>
+            <div class="bloc_page">
+              <header>
+                
+                <div class="container p-2">
+                  <div class="row d-flex p-2 bd-highlight">
+                    <div class="ipl col-md-4 d-inline-flex justify-content-end">
+                      <img src="build/img/ipl.png" class="logo" alt="logo ipl">
                     </div>
-                    <input type="password" class="form-control" id="inlineFormInputGroup" placeholder="Mot de passe">
+                    <div class="col-md-8 h1">
+                      <h1>Bienvenue sur le site OFFICIEL de la <span>Poto's League</span></h1>
+                    </div>
                   </div>
                 </div>
-                <div class="col-auto">
+              </header>
+            <section >
+              <!--log in-->
+              <div class="container mt-5  p-5 d-flex justify-content-around">
+                <!--Log in with usual user-->
+                <div class="row">
+                  <div class="col md-6 ">
+
+
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Pseudo:</label>
+                        <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="pseudo">
+                        
+                        
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Mot de passe:</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
+                      </div>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Se souvenir de moi.</label>
+                      </div>
+                      <a href="{{ path('main') }}" class="btn btn-secondary my-2">Valider</a>
+                      
+                      
+                      
+                            
+                    </form>
+                     <!---------------------------------------------------------------------------->
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        <h2 class="h3 mb-3 font-weight-normal">Se connecter</h2>
+                        <label for="inputPseudo" class="sr-only">Pseudo</label>
+                        <input type="pseudo" value="{{ last_username }}" name="pseudo" id="inputPseudo" class="form-control" placeholder="Pseudo" required autofocus>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+                        <input type="hidden" name="_csrf_token"
+                              value="{{ csrf_token('authenticate') }}"
+                        >
+
+                        {#
+                            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                            See https://symfony.com/doc/current/security/remember_me.html
+
+                            <div class="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" name="_remember_me"> Remember me
+                                </label>
+                            </div>
+                        #}
+
+                        <button class="btn btn-lg btn-primary" type="submit">
+                            Se connecter
+                        </button>
+                        {% if app.user %}             
+                                <a class="p-2 " href="{{ path('main') }}">Mon compte</a>
+                                <a class="p-2 " href="{{ path('app_logout') }}">Déconnexion</a>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="p-2 admin" href="{{ path('easyadmin') }}">Admin</a>
+                                {% else %}
+                                {% endif %}
+                                {% else %}
+                                <a class="p-2 " href="{{ path('app_register') }}">Inscription</a>
+                            {% endif %}
+                    </form>
+
+
+
+
+                     <!--------------------------------------------------------------------------->       
+
+
+                  </div>
                 </div>
-                <div class="col-auto">
-                  <button type="submit" class="btn btn-primary mb-2"><a href="dashboard.html">Validez</a></button>
+                <!--Redirection for registration-->
+                <div class="row d-flex align-items-end">
+                  <div class="col md-6">
+                    <form class="form-inline">
+                      <div class="form-group mb-2">
+                        <h3>Pas encore inscrit ?</h3>
+                        <button type="button" class="btn btn-success ml-1" ><a href="/potos_league/public/register">C'est parti !</button>
+                      </div>
+                    </form>
+                  </div>
+                  <!--Log in by socials medias-->
+                  <div class="container">
+                    <div class="row">
+                      <div class="col md-4 d-flex flex-column">
+                        <h3 class="reseaux_sociaux">Se connecter avec...</h3>
+                      </div>
+                      <div>
+                        <a  href="https://www.facebook.com/" class="btnfb btn btn-primary btn-lg btn-block"><img src="build/img/facebook.png" alt="facebook">Facebook</a>
+                        <button type="button" class="btngoogle  btn btn-light btn-lg btn-block"><img src="build/img/google.png" alt="google"><a href="https://www.google.com/">Google</a></button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="container p-2">
-        <div class="row d-flex p-2 bd-highlight">
-          <div class="ipl col-md-4 d-inline-flex justify-content-end">
-            <img src="build/img/ipl.png" class="logo" alt="logo ipl">
-          </div>
-          <div class="col-md-8 h1">
-            <h1>Bienvenue sur le site OFFICIEL de la <span>Poto's League</span></h1>
-          </div>
-        </div>
-      </div>
-    </header>
 
-<section >
-  <!--log in-->
-  <div class="container mt-5  p-5 d-flex justify-content-around">
-    <!--Log in with usual user-->
-    <div class="row">
-      <div class="col md-6 ">
-
-
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Pseudo:</label>
-            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="pseudo">
-            
-            
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Mot de passe:</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe">
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Se souvenir de moi.</label>
-          </div>
-          <button type="submit" class="btn btn-primary"><a href="potos_league/public/login">Validez</button></a>
-        </form>
-
-
-
-      </div>
-    </div>
-    <!--Redirection for registration-->
-    <div class="row d-flex align-items-end">
-      <div class="col md-6">
-        <form class="form-inline">
-          <div class="form-group mb-2">
-            <h3>Pas encore inscrit ?</h3>
-            <button type="button" class="btn btn-success ml-1" ><a href="/potos_league/public/register">C'est parti !</button>
-          </div>
-        </form>
-      </div>
-      <!--Log in by socials medias-->
-      <div class="container">
-        <div class="row">
-          <div class="col md-4 d-flex flex-column">
-            <h3 class="reseaux_sociaux">Se connecter avec...</h3>
-          </div>
-          <div>
-            <a  href="https://www.facebook.com/" class="btnfb btn btn-primary btn-lg btn-block"><img src="build/img/facebook.png" alt="facebook">Facebook</a>
-            <button type="button" class="btngoogle  btn btn-light btn-lg btn-block"><img src="build/img/google.png" alt="google"><a href="https://www.google.com/">Google</a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-  <footer>
-
-    <div class="font-italic">Design by: <a href="#">Moi...</a></div>
-  </footer>
-</div>
-</body>
-
-    
-
-   
-{% endblock %}
+            </section>
+              <footer>
+                <div class="font-italic">Design by: <a href="https://www.yann-sqr.fr">Moi...</a></div>
+              </footer>
+            </div>
+          </body>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -29,5 +29,6 @@ class NflTeamFixtures extends Fixture
 
         $manager->flush();
     }
+    
 }
 

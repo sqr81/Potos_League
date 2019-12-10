@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block navigation %}{% endblock %}
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
@@ -12,4 +12,22 @@
 
         <button class="btn">S'inscrire</button>
     {{ form_end(registrationForm) }}
+    
+    <nav class="my-2 my-md-0">
+                            {% if app.user %}                           
+                                <a class="p-2 " href="{{ path('main') }}">Mon compte</a>
+                                <a class="p-2 " href="{{ path('app_logout') }}">Déconnexion</a>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="p-2 admin" href="{{ path('easyadmin') }}">Admin</a>
+                                {% else %}
+                                {% endif %}
+                            {% else %}
+                                
+                                <a class="p-2 " href="{{ path('app_login') }}">Connexion</a>
+                                <a class="p-2 " href="{{ path('app_register') }}">Inscription</a>
+                            {% endif %}
+                        </nav>
+    
+    
+       
 {% endblock %}

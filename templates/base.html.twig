@@ -3,18 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Poto's League{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">       
-        <link rel="stylesheet" href="/potos_league/public/build/css/app.css">
-        <link rel="stylesheet" href="/potos_league/public/build/css/index.css">
-        <link rel="stylesheet" href="/potos_league/public/build/css/main.css">
-        <link rel="stylesheet" href="/potos_league/public/build/css/includes/navigation.css">
-
-        <link rel="shortcut icon" type="image/x-icon" href="/potos_league/assets/images/flaviconelogo2.ico">
-        
+        {% block stylesheets %}
+            <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">       
+            <link rel="stylesheet" href="/potos_league/public/build/css/app.css">
+            <link rel="stylesheet" href="/potos_league/public/build/css/index.css">
+            <link rel="stylesheet" href="/potos_league/public/build/css/main.css">
+            <link rel="stylesheet" href="/potos_league/public/build/css/includes/navigation.css">
+        {% endblock %}
+            <link rel="shortcut icon" type="image/x-icon" href="/potos_league/assets/images/flaviconelogo2.ico">       
     </head>
     <body>
-
+        {% block navigation %}{% endblock %}
         {% block index %}{% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

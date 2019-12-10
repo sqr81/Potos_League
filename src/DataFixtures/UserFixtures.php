@@ -26,7 +26,7 @@ class UserFixtures extends Fixture
         $User1 ->setPseudo("Alex");
         $password = $this->encoder->encodePassword($User1, 'nofx');
         $User1->setPassword($password);
-        $User1->setEmail("alex@free.fr");
+        $User1->setEmail("alex@free.fr");   
         $User1->setRoles(["ROLE_ADMIN"]);
         $manager->persist($User1);
         $this->setReference("user-alex", $User1);

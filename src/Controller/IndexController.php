@@ -19,3 +19,4 @@ class IndexController extends AbstractController
         return $this->render('index.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 }
+
