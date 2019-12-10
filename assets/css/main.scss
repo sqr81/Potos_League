@@ -83,7 +83,9 @@ height: 600px;
 display: flex;
 flex-direction: column;
 align-items: center;
+
 }
+
 
 body
 {
@@ -104,7 +106,21 @@ margin-top: 5px;
 background-color: rgba(237, 240, 236, 0.3);
 }
 
+#titre{
+  align-items: center;
+}
 
+.logo{
+border: 1px solid black;
+
+
+}
+
+.imageTitre{
+width: 450px;
+height: 100px;
+margin-top:16px;
+}
 
 #separateur
 {
