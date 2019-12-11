@@ -304,7 +304,7 @@ article
 	display:flex;
 	flex-direction: column;
 	width: 45%;
-
+	margin-top: 50px;
 }
 
 
@@ -318,6 +318,7 @@ h2
 	box-shadow: 6px 6px 7px black;
 	width: 400px;
 	background: url("images/bengals2.jpg");
+	
 }
 
 
@@ -655,37 +656,6 @@ h3
 {
 	color:#C20C2A;
 	text-decoration: underline;
-}
-
-
-#news
-{
-	width: 900px;
-	height: 300px;
-	border: 4px solid #181818;
-	border-radius: 6px 6px 6px;
-	position: relative;
-	overflow: auto;
-}
-
-#news p
-{
-	
-	
-	font-family:georgia;
-	font-size: 1.2em;
-	font-weight: bold;
-	text-align: justify;
-	border: 2px solid #181818;
-	border-radius: 6px 6px 6px;
-	width: 800px;
-	background-color: #D1CAC7;
-	margin: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	padding: 10px 10px 10px 10px;
-	opacity: 0.9;
-	z-index: 3;
 }
 
 #imagefooter

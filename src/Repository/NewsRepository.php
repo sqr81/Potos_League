@@ -47,4 +47,17 @@ class NewsRepository extends ServiceEntityRepository
         ;
     }
     */
+    /**
+ * @param int $limit
+ * @return News[]
+ */
+public function findLastNews(int $limit = 3): array
+{
+    $qb = $this->createQueryBuilder("news");
+    $qb ->join("news.user", "user")
+        ->orderBy("news.created_at", "DESC")
+        ->setMaxResults($limit);
+    return $qb->getQuery()->getResult();
+}
+    
 }

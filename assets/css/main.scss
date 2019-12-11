@@ -1,32 +1,5 @@
 
 
-@font-face {
-  font-family: "baskervvilleregular";
-  src: url('police/baskerville/baskervville-regular-webfont.woff2') format('woff2'),
-       url('police/baskerville/baskervville-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-  font-family: "happy_times_at_the_ikobRg";
-  src: url('police/happy-times-at-the-ikob/happy-times-at-the-ikob-webfont.woff2') format('woff2'),
-       url('police/happy-times-at-the-ikob/happy-times-at-the-ikob-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-  font-family: "grand_hotelregular";
-  src: url('police/grand-hotel/grand-hotel-regular-webfont.woff2') format('woff2'),
-       url('police/grand-hotel/grand-hotel-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-  font-family: "astonishedregular";
-  src: url('police/misprintedtype-fonts-astonished-32/astonished/astonished-webfont.woff2') format('woff2'),
-       url('police/misprintedtype-fonts-astonished-32/astonished/astonished-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
 @-webkit-keyframes marqueelike {
 0%, 100% {margin-left:0;}
 99.99% {margin-left:-100%;}
@@ -112,8 +85,6 @@ background-color: rgba(237, 240, 236, 0.3);
 
 .logo{
 border: 1px solid black;
-
-
 }
 
 .imageTitre{
@@ -556,35 +527,6 @@ text-decoration: underline;
 }
 
 
-#news
-{
-width: 900px;
-height: 300px;
-border: 4px solid #181818;
-border-radius: 6px 6px 6px;
-position: relative;
-overflow: auto;
-}
-
-#news p
-{
-
-
-font-family:georgia;
-font-size: 1.2em;
-font-weight: bold;
-text-align: justify;
-border: 2px solid #181818;
-border-radius: 6px 6px 6px;
-width: 800px;
-background-color: #D1CAC7;
-margin: auto;
-margin-top: 20px;
-margin-bottom: 20px;
-padding: 10px 10px 10px 10px;
-opacity: 0.9;
-z-index: 3;
-}
 
 #imagefooter
 {

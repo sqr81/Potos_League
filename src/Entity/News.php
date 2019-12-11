@@ -22,7 +22,7 @@ class News
     private $subject;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $article;
 
@@ -106,5 +106,10 @@ class News
         $this->user_group = $user_group;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getArticle();
     }
 }
