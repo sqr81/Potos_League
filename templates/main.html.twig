@@ -1,6 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 		<aside>
+		
+		<div class="d-flex 	 align-middle m-2">
+					{% if app.user %}             
+                        <a class="button " href="{{ path('main') }}"><button type="button" class="btn btn-warning">Compte</button></a>
+                        <a class="button " href="{{ path('app_logout') }}"><button type="button" class="btn btn-warning">Déconnexion</button></a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="button " href="{{ path('easyadmin') }}"><button type="button" class="btn btn-warning">Admin</button></a>
+                        	{% else %}
+                            {% endif %}
+                            {% else %}   
+                                <a class="p-2 " href="{{ path('app_login') }}">Connexion</a>
+                                <a class="p-2 " href="{{ path('app_register') }}">Inscription</a>
+                            {% endif %}
+				</div>
 			<div class="aside">
 				<div class="container_notif">
 					<div class="rectangle">
@@ -42,20 +56,8 @@
 								</div>
 							</div>
 						</div>
-						
 				</div>
-					{% if app.user %}             
-                        <a class="p-2 " href="{{ path('main') }}">Mon compte</a>
-                        <a class="p-2 " href="{{ path('app_logout') }}">Déconnexion</a>
-                            {% if is_granted('ROLE_ADMIN') %}
-                                <a class="p-2 admin" href="{{ path('easyadmin') }}">Admin</a>
-                        	{% else %}
-                            {% endif %}
-                            {% else %}   
-                                <a class="p-2 " href="{{ path('app_login') }}">Connexion</a>
-                                <a class="p-2 " href="{{ path('app_register') }}">Inscription</a>
-                            {% endif %}
-			
+				
 				<!------------fin carousel------------------------>
 			</div>
 		</aside>
@@ -175,6 +177,7 @@
 							</div>
 					</div>
 						<article>
+						
 							<div class="titre2 mt-5">
 							
 								<div id="DivClignotante" style="visibility:visible;"><h2>Programme TV</h2></div>

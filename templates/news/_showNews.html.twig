@@ -1,0 +1,12 @@
+{% extends 'base.html.twig'  %}
+{% block body %}
+    <body>
+    {% for news  in new %}
+        <div class="bloc_page">
+        {{ include('includes/titre.html.twig') }}
+        <h1>News</h1>
+        </div>
+    {% endfor %}   
+    </body>
+{% endblock %}
+

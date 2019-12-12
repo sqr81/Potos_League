@@ -8,22 +8,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MainController extends AbstractController
+class ShowNewsController extends AbstractController
 {
     /**
-     * @Route("/main", name="main")
+     * @Route("/_showNews", name="_showNews")
      */
     public function index()
     {
-        return $this->render('main.html.twig', [
-            'controller_name' => 'MainController',
+        return $this->render('_showNews.html.twig', [
+            'controller_name' => 'ShowNewsController',
         ]);
     }
 
     public function news()
     {
         $news = $this->getDoctrine()->getRepository(News::class)->findLastNews();
-        return $this->render("news/_CardNews.html.twig",[
+        return $this->render("news/_ShowNews.html.twig",[
             "new" => $news 
         ]);
     }

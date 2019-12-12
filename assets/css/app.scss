@@ -82,6 +82,7 @@
 	height: 600px;
 	display: flex;
 	flex-direction: column;
+	align-content: space-around;
 }
 
 body
@@ -644,6 +645,8 @@ h2
 	top:0;
 	left:0;
 }
+
+
 
 h3
 {
