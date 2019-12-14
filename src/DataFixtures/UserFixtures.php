@@ -27,7 +27,7 @@ class UserFixtures extends Fixture
         $password = $this->encoder->encodePassword($User1, 'nofx');
         $User1->setPassword($password);
         $User1->setEmail("alex@free.fr");   
-        $User1->setRoles(["ROLE_ADMIN"]);
+        $User1->setRoles(['ROLE_ADMIN']);
         $manager->persist($User1);
         $this->setReference("user-alex", $User1);
 
@@ -36,7 +36,7 @@ class UserFixtures extends Fixture
         $password = $this->encoder->encodePassword($User2, 'nofx');
         $User2->setPassword($password);
         $User2->setEmail("brian@free.fr");
-        $User2->setRoles(["ROLE_ADMIN"]);
+        $User2->setRoles(['ROLE_ADMIN']);
         $manager->persist($User2);
         $this->setReference("user-brian", $User2);
 

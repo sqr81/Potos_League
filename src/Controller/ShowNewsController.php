@@ -20,12 +20,6 @@ class ShowNewsController extends AbstractController
         ]);
     }
 
-    public function news()
-    {
-        $news = $this->getDoctrine()->getRepository(News::class)->findLastNews();
-        return $this->render("news/_ShowNews.html.twig",[
-            "new" => $news 
-        ]);
-    }
+    
 }
 

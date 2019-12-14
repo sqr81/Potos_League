@@ -1,254 +1,383 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-		<aside>
-		
+	<aside>
+	<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+  <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+  <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+  <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+</div>
+<div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+  <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+  <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+</div>
 		<div class="d-flex 	 align-middle m-2">
-					{% if app.user %}             
-                        <a class="button " href="{{ path('main') }}"><button type="button" class="btn btn-warning">Compte</button></a>
-                        <a class="button " href="{{ path('app_logout') }}"><button type="button" class="btn btn-warning">Déconnexion</button></a>
-                            {% if is_granted('ROLE_ADMIN') %}
-                                <a class="button " href="{{ path('easyadmin') }}"><button type="button" class="btn btn-warning">Admin</button></a>
-                        	{% else %}
-                            {% endif %}
-                            {% else %}   
-                                <a class="p-2 " href="{{ path('app_login') }}">Connexion</a>
-                                <a class="p-2 " href="{{ path('app_register') }}">Inscription</a>
-                            {% endif %}
-				</div>
-			<div class="aside">
-				<div class="container_notif">
-					<div class="rectangle">
-						<div class="notification-text">
-							<i class="material-icons">info</i>
-							<span>&nbsp;&nbsp;test notification.</span>
-						</div>
-					</div>
-				</div>
-				<!-------------carousel-------------------------->
-				<div class="carousel">
-						<div class="content-slider">
-							<h3>Le coach de la semaine</h3>
-
-							<div class="slider">
-								<div class="mask">
-								<ul>
-									<li class="anim1">
-									<div class="quote">-Brian-</div>
-									<div class="source"></div>
-									</li>
-									<li class="anim2">
-									<div class="quote">The Playaz</div>
-									<div class="source"></div>
-									</li>
-									<li class="anim3">
-									<div class="quote">125 pts</div>
-									<div class="source"></div>
-									</li>
-									<li class="anim4">
-									<div class="quote">Wilson</div>
-									<div class="source"></div>
-									</li>
-									<li class="anim5">
-									<div class="quote">37pts</div>
-									<div class="source"></div>
-									</li>
-								</ul>
-								</div>
-							</div>
-						</div>
-				</div>
-				
-				<!------------fin carousel------------------------>
-			</div>
-		</aside>
-		<div id="bloc_page">
-			<header>
-				
-				<div class="container_navigation">
-				{{ include('includes/titre.html.twig') }}
-				</div>
-
-					<div id="separateur">
-						<img src="/potos_league/assets/images/separateur.png" alt="separateur"/>
-					</div>
-			</header>
-				
-
-			<section>
-				<article>
-					<div class="hottopic">
-						<div class="hottopic_image">
-							<img src="/potos_league/assets/images/hottopic2.png" alt="hottopic_images" title="hot_topic">
-						</div>
-						<div class="defileParent">
-							<span class="defile"
-								data-text=" Félicitations à notre champion 2018 Christophe et ses Faucons du sud !!!">
-							</span>
-						</div>
-						<div class="hottopic_image">
-							<img src="/potos_league/assets/images/hottopic2.png" alt="hottopic_images" title="hot_topic">
-						</div>
-					</div>
-
-					
-					<div class="titre2">
-						<h2>Score journée</h2>
-							<div id="score_journee">
-								
-								<p>
-									Nissa Dolphins 		  : 115.95<br/>
-									South Falcons  		  : <a>116.95</a>
-								</p>
-								<br/>
-								<p>
-									The Playaz     		  : 88.20<br/>
-									Les Caribous   		  : <a>90.95</a>
-								</p>
-								<br/>
-								<p>
-									Elsass eagles  : <a>119.25</a><br/>
-									Opexteam     		  : 99.25
-								</p>
-								<br/>
-								<p>
-									Les Dahus de la Yaute : <a>125.15</a><br/>
-									Les Bronco's Mosellans: 83.10
-								</p>
-								
-							</div>
-					</div>
-					<div class="titre2">
-						<h2>Classement</h2>
-							<div id="classement">
-								
-									<ol>
-										<p>Playoffs</p>	
-										<li><div class="southfalcons">
-									   	South Falcons</div></li>
-									   	<li><div class="nissadolphins">	
-										Nissa Dolphins</div></li>
-									   	<li><div class="lescaribous">
-										Les Caribous</div></li>
-										<li><div class="theplayaz">
-										The Playaz</div></li>
-										<p>Playoffs de la lose</p>
-										<li><div class="lesdahuts">
-										Les Dahuts de la Yaute</div></li>
-										<li><div class="lesbroncos">
-										Les Bronco's Mosellans</div></li>
-										<li><div class="opexteam">
-										Opexteam</div></li>
-										<li><div class="elsasseagles">
-										Elsass Eagles</div></li>
-										<p>Saison terminée</p>
-										<li><div class="gitansdenancy">
-										Gitans de Nancy</div></li>
-										<li><div class="theblackcats">
-										The Black Cats</div></li>
-										<li><div class="lessurfeurs">
-										Les Surfeurs</div></li>
-										<li><div class="galettesaucisse">
-										Galette Saucisse</div></li>			
-									</ol>
-							</div>
-					</div>
-					<div class="titre2 mt-5">
-						<h2>C'est chaud !</h2>
-							<div id="chaud">
-
-								<div id="video">
-									<iframe width="250" height="250" src="https://www.youtube.com/embed/usw9WiShXEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-								</div>
-								<div id="spoil">
-									<img class="spoillogo" src="/potos_league/assets/images/logospoil2.png"/>
-									<h3><a href="spoil.html">Ca spoile</a></h3>
-								</div>
-								<div id="chambre">
-									<img class="trashlogo" src="/potos_league/assets/images/logotrash.png"/>
-									<h3><a href="cachambre.html">Ca chambre</a></h3>
-								</div>
-								<div id="divers">
-									<img class="diverslogo" src="/potos_league/assets/images/logodivers.png"/>
-									<h3>Divers</h3>
-								</div>
-								<div id="hottopic">
-									<img src="/potos_league/assets/images/pats.jpg" alt="pats" title="pats"/>
-								</div>							
-							</div>
-					</div>
-						<article>
-						
-							<div class="titre2 mt-5">
-							
-								<div id="DivClignotante" style="visibility:visible;"><h2>Programme TV</h2></div>
-								<p><br />
-									<script type="text/javascript"> 
-									var clignotement = function(){ 
-									if (document.getElementById('DivClignotante').style.visibility=='visible'){ 
-										document.getElementById('DivClignotante').style.visibility='hidden'; 
-									} 
-									else{ 
-									document.getElementById('DivClignotante').style.visibility='visible'; 
-									} 
-									}; 
-									// mise en place de l appel de la fonction toutes les 0.8 secondes 
-									// Pour arrêter le clignotement : clearInterval(periode); 
-									periode = setInterval(clignotement, 800); 
-									</script></p>
-								<div class="tv">
-									<img src="/potos_league/assets/images/tv/tvweek-5.jpg" alt="tv" title="tv"/>
-								</div>
-							</div>
-						</article>						
-				</article>
-					<div class="news mt-5">
-						<h2>News</h2>
-							<div class="cardNews d-flex">											
-  								{{ render(controller('App\\Controller\\MainController::news'))}}
-							</div>									
-					</div>		
-			</section>
-			<footer>
-				<div class="liens mt-5">
-						<h2>Liens</h2>
-							<div id="imagenav">
-								<div id="imagefooter"><img src="/potos_league/assets/images/oilers7.jpg" alt="oilers" title="oilers">		
-									<div id="images_liens">
-										<div class="facebook">
-											<a href="https://www.facebook.com/"><img src="/potos_league/assets/images/facebook.png" alt="facebook" title="facebook"/>
-											</a></div>
-										<div class="nfl">
-											<a href="https://www.nfl.com/"><img src="/potos_league/assets/images/nfl.png" alt="NFL" title="NFL"/></a></div>
-										<div class="fffa">
-											<a href="http://www.fffa.org/"><img src="/potos_league/assets/images/fffa.png" alt="fffa"title="fffa"/></a></div>
-										<div class="bein">
-											<a href="https://www.beinsports.com/france/programmes"><img src="/potos_league/assets/images/bein.png" alt="bein" title="Bein Sport"/></a></div>
-										<div class="youtube">
-											<a href="https://www.youtube.com/"><img src="/potos_league/assets/images/youtube.png" alt="youtube" title="Youtube"/></a></div>
-										<div class="mail">
-											<a href="mailto:sqr81@free.fr"></a><img src="/potos_league/assets/images/enveloppe.png" alt="mail" title="mail"/></a></div>
-									</div>
-								</div>
-							</div>
-				</div>
-			</footer>
-
+			{% if app.user %}
+				<a class="button " href="{{ path('main') }}">
+					<button type="button" class="btn btn-warning">
+						Compte
+					</button>
+				</a>
+				<a class="button " href="{{ path('app_logout') }}">
+					<button type="button" class="btn btn-warning">
+						Déconnexion
+					</button>
+				</a>
+				{% if is_granted('ROLE_ADMIN') %}
+					<a class="button " href="{{ path('easyadmin') }}">
+						<button type="button" class="btn btn-warning">
+							Admin
+						</button>
+					</a>
+					{% else %}
+				{% endif %}
+			{% else %}
+				<a class="p-2 " href="{{ path('app_login') }}">
+					Connexion
+				</a>
+				<a class="p-2 " href="{{ path('app_register') }}">
+					Inscription
+				</a>
+			{% endif %}
 		</div>
-		
-		
-		<?php
-			$monfichier = fopen("main.html.twig","r+");
+		<div class="aside">
+			<div class="container_notif">
+				<div class="rectangle">
+					<div class="notification-text">
+						<i class="material-icons">
+							info
+						</i>
 
-			$pages_vues = fgets($monfichier);
-			$pages_vues += 1;
-			fseek($monfichier,0);
-			fputs($monfichier, $pages_vues);
-			fclose($monfichier);
-			echo "<p>cette page a ete vue".$pages_vues. " fois</p>";
-		?>
-	</body>
+						<span>
+							&nbsp;&nbsp;test notification.
+						</span>
+					</div>
+				</div>
+			</div>
+			<!-------------carousel-------------------------->
+			<div class="carousel">
+				<div class="content-slider">
+					<h3>
+						Le coach de la semaine
+					</h3>
+
+					<div class="slider">
+						<div class="mask">
+							<ul>
+								<li class="anim1">
+									<div class="quote">
+										-Brian-
+									</div>
+									<div class="source"></div>
+								</li>
+								<li class="anim2">
+									<div class="quote">
+										The Playaz
+									</div>
+									<div class="source"></div>
+								</li>
+								<li class="anim3">
+									<div class="quote">
+										125 pts
+									</div>
+									<div class="source"></div>
+								</li>
+								<li class="anim4">
+									<div class="quote">
+										Wilson
+									</div>
+									<div class="source"></div>
+								</li>
+								<li class="anim5">
+									<div class="quote">
+										37pts
+									</div>
+									<div class="source"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!------------fin carousel------------------------>
+		</div>
+	</aside>
+	<div id="bloc_page">
+		<header>
+
+			<div class="container_navigation">
+				{{ include('includes/titre.html.twig') }}
+			</div>
+
+			<div id="separateur">
+				<img src="/potos_league/assets/images/separateur.png" alt="separateur"/>
+			</div>
+		</header>
 
 
+		<section>
+			<article>
+				<div class="hottopic">
+					<div class="hottopic_image">
+						<img src="/potos_league/assets/images/hottopic2.png" alt="hottopic_images" title="hot_topic">
+					</div>
+					<div class="defileParent">
+						<span class="defile" data-text=" Félicitations à notre champion 2018 Christophe et ses Faucons du sud !!!"></span>
+					</div>
+					<div class="hottopic_image">
+						<img src="/potos_league/assets/images/hottopic2.png" alt="hottopic_images" title="hot_topic">
+					</div>
+				</div>
 
-</html>
-{% endblock %}
+
+				<div class="titre2">
+					<h2>
+						Score journée
+					</h2>
+					<div id="score_journee">
+
+						<p>
+							Nissa Dolphins 		  : 115.95
+							<br/>
+							South Falcons  		  :
+							<a>
+								116.95
+							</a>
+						</p>
+						<br/>
+						<p>
+							The Playaz     		  : 88.20
+							<br/>
+							Les Caribous   		  :
+							<a>
+								90.95
+							</a>
+						</p>
+						<br/>
+						<p>
+							Elsass eagles  :
+							<a>
+								119.25
+							</a>
+							<br/>
+							Opexteam     		  : 99.25
+						</p>
+						<br/>
+						<p>
+							Les Dahus de la Yaute :
+							<a>
+								125.15
+							</a>
+							<br/>
+							Les Bronco's Mosellans: 83.10
+						</p>
+
+					</div>
+				</div>
+				<div class="titre2">
+					<h2>
+						Classement
+					</h2>
+					<div id="classement">
+
+						<ol>
+							<p>
+								Playoffs
+							</p>
+							<li>
+								<div class="southfalcons">
+									South Falcons
+								</div>
+							</li>
+							<li>
+								<div class="nissadolphins">
+									Nissa Dolphins
+								</div>
+							</li>
+							<li>
+								<div class="lescaribous">
+									Les Caribous
+								</div>
+							</li>
+							<li>
+								<div class="theplayaz">
+									The Playaz
+								</div>
+							</li>
+							<p>
+								Playoffs de la lose
+							</p>
+							<li>
+								<div class="lesdahuts">
+									Les Dahuts de la Yaute
+								</div>
+							</li>
+							<li>
+								<div class="lesbroncos">
+									Les Bronco's Mosellans
+								</div>
+							</li>
+							<li>
+								<div class="opexteam">
+									Opexteam
+								</div>
+							</li>
+							<li>
+								<div class="elsasseagles">
+									Elsass Eagles
+								</div>
+							</li>
+							<p>
+								Saison terminée
+							</p>
+							<li>
+								<div class="gitansdenancy">
+									Gitans de Nancy
+								</div>
+							</li>
+							<li>
+								<div class="theblackcats">
+									The Black Cats
+								</div>
+							</li>
+							<li>
+								<div class="lessurfeurs">
+									Les Surfeurs
+								</div>
+							</li>
+							<li>
+								<div class="galettesaucisse">
+									Galette Saucisse
+								</div>
+							</li>
+						</ol>
+					</div>
+				</div>
+				<div class="titre2 mt-5">
+					<h2>
+						C'est chaud !
+					</h2>
+					<div id="chaud">
+
+						<div id="video">
+							<iframe width="250" height="250" src="https://www.youtube.com/embed/usw9WiShXEs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<div id="spoil">
+							<img class="spoillogo" src="/potos_league/assets/images/logospoil2.png"/>
+							<h3>
+								<a href="spoil.html">
+									Ca spoile
+								</a>
+							</h3>
+						</div>
+						<div id="chambre">
+							<img class="trashlogo" src="/potos_league/assets/images/logotrash.png"/>
+							<h3>
+								<a href="cachambre.html">
+									Ca chambre
+								</a>
+							</h3>
+						</div>
+						<div id="divers">
+							<img class="diverslogo" src="/potos_league/assets/images/logodivers.png"/>
+							<h3>
+								Divers
+							</h3>
+						</div>
+						<div id="hottopic">
+							<img src="/potos_league/assets/images/pats.jpg" alt="pats" title="pats"/>
+						</div>
+					</div>
+				</div>
+				<article>
+
+					<div class="titre2 mt-5">
+
+						<div id="DivClignotante" style="visibility:visible;">
+							<h2>
+								Programme TV
+							</h2>
+						</div>
+						<p>
+							<br/>
+							<script type="text/javascript">
+								var clignotement = function () {
+if (document.getElementById('DivClignotante').style.visibility == 'visible') {
+document.getElementById('DivClignotante').style.visibility = 'hidden';
+} else {
+document.getElementById('DivClignotante').style.visibility = 'visible';
+}
+};
+// mise en place de l appel de la fonction toutes les 0.8 secondes
+// Pour arrêter le clignotement : clearInterval(periode);
+periode = setInterval(clignotement, 800);
+							</script>
+						</p>
+						<div class="tv">
+							<img src="/potos_league/assets/images/tv/tvweek-5.jpg" alt="tv" title="tv"/>
+						</div>
+					</div>
+				</article>
+			</article>
+			<div class="news mt-5">
+				<h2>
+					News
+				</h2>
+				<div class="cardNews d-flex">
+					{{ render(controller('App\\Controller\\MainController::news'))}}
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="liens mt-5">
+				<h2>
+					Liens
+				</h2>
+				<div id="imagenav">
+					<div id="imagefooter">
+						<img src="/potos_league/assets/images/oilers7.jpg" alt="oilers" title="oilers">
+						<div id="images_liens">
+							<div class="facebook">
+								<a href="https://www.facebook.com/">
+									<img src="/potos_league/assets/images/facebook.png" alt="facebook" title="facebook"/>
+								</a>
+							</div>
+							<div class="nfl">
+								<a href="https://www.nfl.com/">
+									<img src="/potos_league/assets/images/nfl.png" alt="NFL" title="NFL"/>
+								</a>
+							</div>
+							<div class="fffa">
+								<a href="http://www.fffa.org/">
+									<img src="/potos_league/assets/images/fffa.png" alt="fffa" title="fffa"/>
+								</a>
+							</div>
+							<div class="bein">
+								<a href="https://www.beinsports.com/france/programmes">
+									<img src="/potos_league/assets/images/bein.png" alt="bein" title="Bein Sport"/>
+								</a>
+							</div>
+							<div class="youtube">
+								<a href="https://www.youtube.com/">
+									<img src="/potos_league/assets/images/youtube.png" alt="youtube" title="Youtube"/>
+								</a>
+							</div>
+							<div class="mail">
+								<a href="mailto:sqr81@free.fr"></a>
+								<img src="/potos_league/assets/images/enveloppe.png" alt="mail" title="mail"/>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</div>
+
+<div class="compteur mt-1">
+	
+</div></body></html>{% endblock %}

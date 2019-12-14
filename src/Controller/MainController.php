@@ -24,7 +24,7 @@ class MainController extends AbstractController
     {
         $news = $this->getDoctrine()->getRepository(News::class)->findLastNews();
         return $this->render("news/_CardNews.html.twig",[
-            "new" => $news 
+            "new" => $news
         ]);
     }
 }

@@ -5,6 +5,10 @@
         <div class="bloc_page">
         {{ include('includes/titre.html.twig') }}
         <h1>News</h1>
+        <div class="card-body">
+    <h5><strong>Sujet :{{ news.subject }}</strong></h5>
+    <p>{{ news.article }}</p>
+  </div>
         </div>
     {% endfor %}   
     </body>

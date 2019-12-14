@@ -17,6 +17,7 @@ class NewsFixtures extends Fixture implements DependentFixtureInterface
         $news1->setCreatedAt(new \DateTime("2019-12-03"));
         $news1->setUserGroup($this->getReference("userGroup-potos"));
         $news1->setUser($this->getReference("user-alex"));
+        $news1->setPicture("http://placehold.it/350x150");
         $manager->persist($news1);
         $this->setReference("news-transfert", $news1);
 
@@ -26,6 +27,7 @@ class NewsFixtures extends Fixture implements DependentFixtureInterface
         $news2->setCreatedAt(new \DateTime("2019-12-03"));
         $news2->setUserGroup($this->getReference("userGroup-potos"));
         $news2->setUser($this->getReference("user-brian"));
+        $news2->setPicture("http://placehold.it/350x150");
         $manager->persist($news2);
         $this->setReference("news-transfert", $news2);
 
