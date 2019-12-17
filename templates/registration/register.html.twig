@@ -1,33 +1,25 @@
 {% extends 'base.html.twig'  %}
-{% block navigation %}{% endblock %}
 {% block title %}Inscription{% endblock %}
-
 {% block body %}
-    <h1>Inscription</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.pseudo) }}
-        {{ form_row(registrationForm.plainPassword) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button class="btn">S'inscrire</button>
-    {{ form_end(registrationForm) }}
-    
-    <nav class="my-2 my-md-0">
-        {% if app.user %}                           
-            <a class="p-2 " href="{{ path('main') }}">Mon compte</a>
-            <a class="p-2 " href="{{ path('app_logout') }}">Déconnexion</a>
-        {% if is_granted('ROLE_ADMIN') %}
-            <a class="p-2 admin" href="{{ path('easyadmin') }}">Admin</a>
-        {% else %}
-        {% endif %}
-        {% else %}
-                                
-            <a class="p-2 " href="{{ path('app_login') }}">Connexion</a>
-            <a class="p-2 " href="{{ path('app_register') }}">Inscription</a>
-        {% endif %}
-    </nav>
-    
+<div class="pageContent">
+    <div class="Title">
+        {{ include('includes/titre.html.twig') }}
+    </div>
+    <div class="register">
+        <h1 class="h3 mb-3 mt-4 font-weight-normal text-white">
+            Inscription
+        </h1>
+        <div class="form">
+            {{ form_start(registrationForm) }}        
+            {{ form_row(registrationForm.pseudo) }}
+            {{ form_row(registrationForm.plainPassword) }}
+            {{ form_row(registrationForm.agreeTerms) }}
+            <button class="btn btn-lg btn-primary mt-5" type="submit">S'inscrire</button>
+            {{ form_end(registrationForm) }}
+        </div>
+           
+    </div>
+</div>
     
        
 {% endblock %}

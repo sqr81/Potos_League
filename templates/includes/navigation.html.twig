@@ -1,28 +1,30 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 
-
-<nav>
-    <ul>
-        <div class="navigation">
-            <img src="/potos_league/assets/images/user.png" alt="user" title="logo"/>
-            <li><a href="membres.html">Membres</a></li>
-            <img src="/potos_league/assets/images/calendrier.png" alt="calendrier" title="calendrier"/>
-            <li><a>Calendrier</a>
-                <ul>
-                    <li><a href="calendrier2018.html">calendrier 2018</a></li>
-                    <li><a href="calendrier2019.html">calendrier 2019
-                    </a></li>
-                </ul>
-            </li>
-            <img src="/potos_league/assets/images/trophee.png" alt="trophee" title="trophee"/>
-            <li><a href="palmares.html">Palmarès</a></li>
-            <img src="/potos_league/assets/images/calendar2.png" alt="calendar2" title="calendar2"/>
-            <li><a>Calendrier NFL</a>
-                <ul>
-                    <li><a href="calendriernfl.html">Calendrier 2019</a></li>
-                </ul>
-            </li>	
-            
+  <a class="navbar-brand" href="#">Fixed top</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ path('app_logout') }}">Deconnexion<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ path('easyadmin') }}">Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
         </div>
+      </li>
     </ul>
-    
+  </div>
 </nav>

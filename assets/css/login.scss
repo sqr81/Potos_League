@@ -15,11 +15,16 @@ background-color: rgba(237, 240, 236, 0.3);
     display:flex;
     flex-direction: column;
     background: rgb(223, 98, 10);
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     width: 250px;
     height: 500px;
     margin-left: 120px;
     margin-top: 50px;
     margin-bottom: 50px;
+    
 }
 
+.pageContent a{
+        color: white;
+}

@@ -77,12 +77,14 @@
     to   { opacity: 1; }
 }
 
-.aside {
+.aside {	
 	width: 300px;
 	height: 600px;
 	display: flex;
 	flex-direction: column;
-	align-content: space-around;
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
 }
 
 body
@@ -112,7 +114,7 @@ body
 	padding:10px;
 	display: flex;
 	justify-content: space-between;
-	background:url("images/bengals2.jpg");
+	background:url("../img/bengals2.jpg");
 	height:80px;
 	
 }
@@ -535,7 +537,7 @@ h2
 	flex-direction: column;
 	justify-content: space-around;
 	background: url("images/bengals2.jpg")no-repeat;
-
+	color: #181818;
 }
 
 .tv
@@ -578,6 +580,7 @@ h2
 	width: 300px;
 	height: 50px;
 	margin:auto;
+	
 }
 
 
@@ -809,7 +812,6 @@ h3
 	border: 2px solid black;
 	box-shadow: 12px 1px 12px;
 	border-radius: 6px;
-
 	background: rgb(95, 51, 165);
 	-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
 	-moz-animation: fadein 3s; /* Firefox < 16 */

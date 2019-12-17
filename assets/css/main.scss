@@ -69,6 +69,7 @@ margin: auto;
 font-family: Georgia, serif;
 color:#181818;
 margin-top: 5px;
+margin-left:2px;
 background-color: rgba(237, 240, 236, 0.3);
 }
 
@@ -229,10 +230,6 @@ z-index: 3;
 {
 color: red;
 }
-
-
-
-
 
 #classement
 {
@@ -395,7 +392,7 @@ display:flex;
 flex-direction: column;
 justify-content: space-around;
 background: url("/potos_league/assets/images/bengals2.jpg")no-repeat;
-
+color: #181818;
 }
 
 .tv
@@ -409,12 +406,7 @@ border-radius: 6px 6px 6px;
  -ms-animation: fadein 2s; /* Internet Explorer */
   -o-animation: fadein 2s; /* Opera < 12.1 */
    animation: fadein 2s;
-
 }
-
-
-
-
 
 #video
 {
@@ -439,8 +431,6 @@ width: 300px;
 height: 50px;
 margin:auto;
 }
-
-
 
 .spoillogo
 {
@@ -496,7 +486,6 @@ top: 25px;
 
 }
 
-
 .bengals3
 {
 width: 900px;
@@ -514,13 +503,12 @@ font-weight: bold;
 margin:auto;
 }
 
+
 #chaud h3:hover
 {
 color:#C20C2A;
 text-decoration: underline;
 }
-
-
 
 #imagefooter
 {
@@ -661,15 +649,13 @@ animation: fade-in .65s ease-in forwards;
 
 
 .carousel {
-
 width:220px;
-height: 30%;
+height: 35%;
 margin-top: 10px;
 display: flex;
 border: 2px solid black;
 box-shadow: 12px 1px 12px;
 border-radius: 6px;
-
 background: rgb(95, 51, 165);
 -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
 -moz-animation: fadein 3s; /* Firefox < 16 */

@@ -1,12 +1,12 @@
 {% for news  in new %}
-<div class="card m-2 " style="width: 18rem;">
-
-  
-  <img src="{{ asset("assets/images/" ~ news.picture) }}"  class="fit-image">
+<div class="card m-2" style="width: 18rem;">
+  <div imageCard>
+    <img src="{{ asset("uploads/news/" ~ news.picture) }}"  class="fit-image">
+  </div>
   <div class="card-body">
-    <h5 class="card-title"><strong>Sujet :{{ news.subject }}</strong></h5>
-    <p class="card-text">{{ news.article }}</p>
-    <a href="potos_league/templates/news/_showNews.html.twig" class="btn btn-primary">Voirplus</a>
+    <h5 class="card-title"><strong>Sujet :{{ news.subject }}</strong></h5><hr/>
+    <p class="card-text">{{ news.article|length > 50 ? news.article|striptags|slice(0, 250) ~ '...' : news.article}}</p>
+    <a href="potos_league/templates/news/_showNews.html.twig" class="btn btn-primary">Voir plus</a>
   </div>
 </div>
 {% endfor %}
