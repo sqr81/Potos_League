@@ -18,14 +18,7 @@ class MainController extends AbstractController
         return $this->render('main.html.twig', [
             'controller_name' => 'MainController',
         ]);
-    }
-
-    public function news()
-    {
-        $news = $this->getDoctrine()->getRepository(News::class)->findLastNews();
-        return $this->render("news/_CardNews.html.twig",[
-            "new" => $news
-        ]);
-    }
+    }  
 }
+
 

@@ -6,7 +6,7 @@
   <div class="card-body">
     <h5 class="card-title"><strong>Sujet :{{ news.subject }}</strong></h5><hr/>
     <p class="card-text">{{ news.article|length > 50 ? news.article|striptags|slice(0, 250) ~ '...' : news.article}}</p>
-    <a href="potos_league/templates/news/_showNews.html.twig" class="btn btn-primary">Voir plus</a>
+    <a href="{{ path('_showNews') }}" class="btn btn-primary">Voir plus</a>
   </div>
 </div>
 {% endfor %}

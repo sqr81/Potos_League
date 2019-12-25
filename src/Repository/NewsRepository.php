@@ -60,5 +60,12 @@ public function findLastNews(int $limit = 3): array
     return $qb->getQuery()->getResult();
 }
 
+public function showNews()
+{
+    return $this->render('news/_showNews.html.twig', [
+        'news' => $news,
+        'id' => $news->getId(),
+    ]);
+}
 
 }

@@ -294,15 +294,15 @@
 							<br/>
 							<script type="text/javascript">
 								var clignotement = function () {
-if (document.getElementById('DivClignotante').style.visibility == 'visible') {
-document.getElementById('DivClignotante').style.visibility = 'hidden';
-} else {
-document.getElementById('DivClignotante').style.visibility = 'visible';
-}
-};
-// mise en place de l appel de la fonction toutes les 0.8 secondes
-// Pour arrêter le clignotement : clearInterval(periode);
-periode = setInterval(clignotement, 800);
+								if (document.getElementById('DivClignotante').style.visibility == 'visible') {
+								document.getElementById('DivClignotante').style.visibility = 'hidden';
+								} else {
+								document.getElementById('DivClignotante').style.visibility = 'visible';
+								}
+							};
+							// mise en place de l appel de la fonction toutes les 0.8 secondes
+							// Pour arrêter le clignotement : clearInterval(periode);
+							periode = setInterval(clignotement, 800);
 							</script>
 						</p>
 						<div class="tv">
@@ -316,7 +316,7 @@ periode = setInterval(clignotement, 800);
 					News
 				</h2>
 				<div class="cardNews d-flex">
-					{{ render(controller('App\\Controller\\MainController::news'))}}
+					{{ render(controller('App\\Controller\\NewsController::news'))}}
 				</div>
 			</div>
 		</section>

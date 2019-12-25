@@ -1,18 +1,18 @@
 {% extends 'base.html.twig'  %}
-{% for news  in new %}
 {% block body %}
-    <body>
-   
-        <div class="bloc_page">
-        {{ include('includes/titre.html.twig') }}
-            <h1>News</h1>
-            <div class="news">
-                <h2><strong>Sujet :{{ news.subject }}</strong></h2>
-                <h3>Autheur:{{ news.user }}</h3>
-                <p>{{ news.article }}</p>
-            </div>
-        </div>
-     
-    </body>
+	{% for news  in new %}
+			<div class="bloc_page">
+				{{ include('includes/titre.html.twig') }}
+				<h1>
+					News
+				</h1>
+				<div imageCard>
+					<img src="{{ asset("uploads/news/" ~ news.picture) }}"  class="fit-image">
+				</div>
+				<div class="showNew bg-light">
+					{{ news.subject }}<br/>
+					{{ news }}
+				</div>
+			</div>
+	{% endfor %}
 {% endblock %}
-
