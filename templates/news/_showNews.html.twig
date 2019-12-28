@@ -1,11 +1,11 @@
 {% extends 'base.html.twig'  %}
+{% block titre %}News{% endblock %}
 {% block body %}
+	
 	{% for news  in new %}
 			<div class="bloc_page">
 				{{ include('includes/titre.html.twig') }}
-				<h1>
-					News
-				</h1>
+				
 				<div imageCard>
 					<img src="{{ asset("uploads/news/" ~ news.picture) }}"  class="fit-image">
 				</div>
@@ -16,3 +16,5 @@
 			</div>
 	{% endfor %}
 {% endblock %}
+
+

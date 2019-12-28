@@ -1,3 +1,6 @@
+{% extends 'base.html.twig'  %}
+
+{% block body %}
 {% for news  in new %}
 <div class="card m-2" style="width: 18rem;">
   <div imageCard>
@@ -10,3 +13,4 @@
   </div>
 </div>
 {% endfor %}
+{% endblock %}

@@ -4,3 +4,15 @@
 app_logout:
   path: /logout
   methods: GET
+
+membre:
+    path: /member
+    controller: App\Controller\MemberController
+    defaults:
+      template: '/member.html.twig'
+
+news:
+    path: /_showNews
+    controller: App\Controller\NewsController
+    defaults:
+      template: '/_showNews.html.twig'
